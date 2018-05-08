@@ -18,7 +18,12 @@
 			
 		<!-- The content -->
 		<div class="row">
-			<?php sideContent(); ?>
+                    
+			<!-- Side content -->
+                        <div class="side">
+                            <?php signinButton() ?>
+                            <?php loginButton() ?>
+                        </div>
 			
 			<!-- Main content -->
 			<div class="main">

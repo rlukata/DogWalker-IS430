@@ -8,7 +8,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<style><?php include 'css/main.css';?></style>
 	</head>
-	
+
+        
 	<!-- Body -->
 	<body>
 		
@@ -19,7 +20,11 @@
 		<!-- The content -->
 		<div class="row">
 			
-			<?php sideContent(); ?>
+                        <!-- Side content -->
+                        <div class="side">
+                            <?php signinButton() ?>
+                            <?php loginButton() ?>
+                        </div>
 			
 			<!-- Main content -->
 			<div class="main">
