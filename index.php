@@ -28,8 +28,12 @@
 			
 			<!-- Main content -->
 			<div class="main">
-				<p>This is where we will explain what is our mission, and show off 
-				<i>realistic</i> positive comments from <i>real</i> clients.</p>
+				<p>My dog walker understands that my dogs are my world. She was in constant contact sending me updates 
+				throughout the day. She took care of my dogs are as if they were her own!</p>
+				<p><i>M. Silverstone. Seattle, WA</i></p>
+				</br>
+				<p>John S. is an amazing dogwalker. He takes my labradoodle (Diesel) for runs and my dog loves it!</p>
+				</p><i>P. Gomez. Portland, OR</i></p>
 			</div>
 		</div>
 		
