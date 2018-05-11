@@ -20,11 +20,12 @@
 		<div class="row">
                     
 			<!-- Side content -->
+						<!--
                         <div class="side">
                             <?php signinButton() ?>
                             <?php loginButton() ?>
                         </div>
-			
+						-->
 			<!-- Main content -->
 			<div class="main">
 				<p>Coming soon...</p>

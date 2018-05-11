@@ -84,20 +84,37 @@
             ';
     }
     
-    function signinButton() 
+    /****************************************************************************
+	* TBD: This function needs to be validated and sanitized.
+	* We need to add validation so that for e-mail we can only accept e-mail formatted input
+	* Same for all input.
+	*/
+	function signinButton() 
     {
         echo
         '
         <button onclick="document.getElementById(\'id01\').style.display=\'block\'" style="width:auto;">Sign Up</button>
         <div id="id01" class="modal">
             <span onclick="document.getElementById(\'id01\').style.display=\'none\'" class="closeSignin" title="Close Modal">&times;</span>
-            <form class="modal-content" action="/action_page.php">
+            <form class="modal-content" action="Register_Customer.php" method="post">
                 <div class="container">
                     <h1>Sign Up</h1>
                     <p>Please fill in this form to create an account.</p>
                     <hr>
+					<label for="FirstName"><b>First Name</b></label>
+                    <input class="signin" type="text" placeholder="Enter your First Name" name="FName" maxlength="20" required>
+					
+					<label for="LastName"><b>Last Name</b></label>
+                    <input class="signin" type="text" placeholder="Enter your Last Name" name="LName" maxlength="20" required>
+					
+					<label for="ZipCode"><b>Zip Code</b></label>
+                    <input class="signin" type="text" placeholder="Enter your 5 digits Zip Code" name="ZipCode" pattern="(\d{5})" title="Enter a valid zip code: 90405" maxlength="5" required>
+					
+					<label for="PhoneNumber"><b>Phone Number</b></label>
+                    <input class="signin" type="text" placeholder="Enter your Phone Number" name="PhoneNumber" maxlength="14" pattern="(?:(?:(\s*\(?([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\)?\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})" title="Please enter a valid phone number: (425)555-1212" required>
+					
                     <label for="email"><b>Email</b></label>
-                    <input class="signin" type="text" placeholder="Enter Email" name="email" required>
+                    <input class="signin" type="text" placeholder="Enter Email" name="email" pattern="\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b." title="Enter a valid e-mail address: JohnDoe@gmail.com" required>
 
                     <label for="psw"><b>Password</b></label>
                     <input class="signin" type="password" placeholder="Enter Password" name="psw" required>
@@ -143,7 +160,7 @@
                     <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
                 </div>
                 <div class="container">
-                    <label for="uname"><b>Username</b></label>
+					<label for="uname"><b>Username</b></label>
                     <input class="login" type="text" placeholder="Enter Username" name="uname" required>
                     
                     <label for="psw"><b>Password</b></label>
@@ -171,4 +188,9 @@
         }
         </script>';
      }
+	 
+	 function HelloWorld()
+	 {
+		 echo '<h1>Hellow world!!!</h1>';
+	 }
 ?>
