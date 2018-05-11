@@ -23,11 +23,12 @@
 		<div class="row">
 			
 			<!-- Side content -->
+						<!--
                         <div class="side">
                             <?php signinButton() ?>
                             <?php loginButton() ?>
                         </div>
-			
+						-->
 			<!-- Main content -->
 			<div class="main">
                             <!-- DO NOT BY NO REASON DELETE OR MODIFY THE KEY BELOW -->
