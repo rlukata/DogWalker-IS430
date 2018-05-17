@@ -28,18 +28,18 @@
 				-->
                 <!-- Main content -->
                 <div class="main">
-                        <p>We are the 3Musqueteers!</p> //heading 2 please
+                        <p>We are the 3Musqueteers!</p> /*heading 2 please*/
                         <p>We are passionate about dogs and their health...</p>
                         <p>Some of the benefits for your pet are: </p>
                         <p>1. It helps with your pet's weight control.</p>
                         <p>2. helps your pet's digestive system.</p>
                         <p>3. It stops their destructive behavior and hyperactivity.</p>
-                        <p>Here's what we do: </p> //heading 2 please
+                        <p>Here's what we do: </p> /*heading 2 please*/
                         <p>We pair available dog walkers with people who</p>
                         <p>have the need for their dog(s) to be walked.</p>
-                        <p>Here's why we do it: </p> //heading 2 please
+                        <p>Here's why we do it: </p> /*heading 2 please*/
                         <p>We do this for the love of healthy and happy dogs!</p>
-                        <p>Here's who we are: </p> //heading 2 please
+                        <p>Here's who we are: </p> /*heading 2 please*/
                         <p>We are three men looking to assist our community</p>
                         <p>by providing a free and safe service for pet owners.</p>
                 </div>
