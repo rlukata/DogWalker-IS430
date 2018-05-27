@@ -1,4 +1,9 @@
-<?php include 'included.php'; ?>
+<?php 
+    include 'included.php'; 
+    if(isset($_SESSION['login_user'])){
+        header("location: gmapsFinder.php");
+    };
+?>
 <html>
     <!-- Head -->
     <head>
@@ -20,8 +25,11 @@
 
             <!-- Side content -->
             <div class="side">
-                <?php require 'elements/signinButton.html'; ?>
-                <?php require 'elements/loginButton.html'; ?>
+                <?php 
+                    require 'elements/signupButton.html';                    
+                    require 'elements/signupWalker.html';
+                    require 'elements/loginButton.html';
+                ?>
             </div>
 
             <!-- Main content -->
@@ -30,7 +38,7 @@
                 throughout the day. She took care of my dogs are as if they were her own!</p>
                 <p><i>M. Silverstone. Seattle, WA</i></p></br>
                 <p>John S. is an amazing dogwalker. He takes my labradoodle (Diesel) for runs and my dog loves it!</p>
-                </p><i>P. Gomez. Portland, OR</i></p>
+                <p><i>P. Gomez. Portland, OR</i></p>
             </div>
         </div>
 
