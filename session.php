@@ -1,13 +1,13 @@
 <?php
     // Establishing Connection with Server by passing server_name, user_id and password as a parameter
-    $db = new mysqli("localhost", "rlukata", "ramito1991", "SchoolDatabase");
+    $db = new mysqli("localhost", "root", "", "customers");
     session_start();// Starting Session    
 
     // Storing Session
     $user_check=$_SESSION['login_user'];
 
     // SQL query to fetch information of registerd users and finds user match.
-    $stmt = $db->prepare("SELECT username FROM logins WHERE username=?");
+    $stmt = $db->prepare("SELECT email FROM users WHERE email=?");
     $stmt->bind_param('s', $user_check); 
     $stmt->execute();
     $stmt->store_result();    

@@ -2,20 +2,21 @@
     session_start(); // Starting Session
     $error=''; // Variable To Store Error Message
     if (isset($_POST['submit'])) {
-        if (empty($_POST['username']) || empty($_POST['pswd'])) {
-            $error = "Username or Password is invalid";
+        if (empty($_POST['email']) || empty($_POST['psw'])) {
+            $error = "Email or Password is invalid";
         }
         else {
             // Define $username and $password
-            $username=$_POST['username'];
-            $password=$_POST['pswd'];
+            $email=$_POST['email'];
+            $password=$_POST['psw'];
             
             // Establishing Connection with Server by passing server_name, user_id and password as a parameter
-            $db = new mysqli("localhost", "rlukata", "ramito1991", "SchoolDatabase");
+            $db = new mysqli("localhost", "root", "", "customers");
             
             // SQL query to fetch information of registerd users and finds user match.
-            $stmt = $db->prepare("SELECT username, pswd FROM logins WHERE username=? AND pswd=MD5(?)");
-            $stmt->bind_param('ss', $username, $password); 
+            // add MD5 to pswd
+            $stmt = $db->prepare("SELECT email, password FROM users WHERE email=? AND password=(?)");
+            $stmt->bind_param('ss', $email, $password); 
             $stmt->execute();
             $stmt->store_result();
             
@@ -23,7 +24,7 @@
                 $error = "Username or Password is invalid";
                 
             } else {
-                $_SESSION['login_user']=$username; // Initializing Session
+                $_SESSION['login_user']=$email; // Initializing Session
                 header ("location:gmapsFinder.php");
             }
             mysqli_close($db); // Closing Connection
