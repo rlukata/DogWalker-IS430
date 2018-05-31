@@ -15,7 +15,7 @@
             
             // SQL query to fetch information of registerd users and finds user match.
             // add MD5 to pswd
-            $stmt = $db->prepare("SELECT email, password FROM users WHERE email=? AND password=(?)");
+            $stmt = $db->prepare("SELECT email, password FROM dog_owners WHERE email=? AND password=(?)");
             $stmt->bind_param('ss', $email, $password); 
             $stmt->execute();
             $stmt->store_result();
