@@ -35,7 +35,7 @@ $userEmail = $_POST["email"];
 $phoneNumber = $_POST["PhoneNumber"];
 $userPassword = $_POST["psw"];
 $user2Password = $_POST["psw-repeat"];
-
+isset($firstName, $lastName, $zipCode, $userEmail, $phoneNumber, $userPassword, $user2Password);
 
 echo "First Name: $firstName<br>";
 echo "Last Name: $lastName<br>";
