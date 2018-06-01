@@ -20,8 +20,11 @@
 
             <!-- Side content -->
             <div class="side">
-                <?php require 'elements/signinButton.html'; ?>
-                <?php require 'elements/loginButton.html'; ?>
+                <?php 
+                    require 'elements/signupButton.html';                    
+                    require 'elements/signupWalker.html';
+                    require 'elements/loginButton.html';
+                ?>
             </div>
 
             <!-- Main content -->
