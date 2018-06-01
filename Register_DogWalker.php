@@ -41,6 +41,8 @@
                 $userPassword = $_POST["psw"];
                 $user2Password = $_POST["psw-repeat"];
 
+                isset($firstName, $lastName, $zipCode, $userEmail, $phoneNumber, $userPassword, $user2Password);
+
                 /* Good for troubleshooting ****************
                 echo "First Name: $firstName<br>";
                 echo "Last Name: $lastName<br>";
