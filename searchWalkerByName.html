@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+ 
+	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+        <div class="container">
+            <h1>Search for a Walker by name</h1>
+            <hr>
+            <label for="FirstName"><b>First Name</b></label>
+            <input class="signin" type="text" placeholder="Enter a Walker's First Name" name="FName" maxlength="20" required>
+
+            <label for="LastName"><b>Last Name</b></label>
+            <input class="signin" type="text" placeholder="Enter a Walker's Last Name" name="LName" maxlength="20" required>
+			<!--
+            <label for="ZipCode"><b>Zip Code</b></label>
+            <input class="signin" type="text" placeholder="Enter a 5 digits Zip Code" name="ZipCode" pattern="(\d{5})" title="Enter a valid zip code: 90405" maxlength="5" required>
+			-->
+
+            <div class="clearfix">
+                <button type="submit" class="signupbtn">Search</button>
+            </div>
+        </div>
+    </form>
+
+<?php
+// Declare all the needed variables
+$firstName = $lastName = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{  
+  $firstName = $_POST["FName"];
+  $lastName = $_POST["LName"];
+  
+  echo "<hr>";  
+  // Call the function to retrieve Walkers from the corresponding SQL Table 
+  RetrieveAndDisplayWalkers($firstName, $lastName);    
+}
+
+// Function to display a list of existing courses
+function RetrieveAndDisplayWalkers($firstName, $lastName)
+{
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "Customers";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	} 
+
+	// Return up to 10 records, in case there are more than 10 Walkers with the same name
+	$sql = "SELECT FName, LName, Email FROM Dog_Walkers WHERE FName='$firstName' AND LName='$lastName' ORDER BY LName ASC Limit 10";
+	$result = $conn->query($sql);
+
+	if ($result->num_rows > 0)
+	{
+		echo "<table>";
+				echo "<tr>";
+					echo "<th><u>Last Name</u></th>";
+					echo "<th><u>First Name</u></th>";
+					echo "<th><u>E-Mail</u></th>";
+				echo "</tr>";
+		// output data of each row
+		while($row = $result->fetch_assoc())
+		{
+				echo "<tr>";
+					echo "<td>" . $row['FName'] . "</td>";
+					echo "<td>" . $row['LName'] . "</td>";
+					echo "<td>" . $row['Email'] . "</td>";
+				echo "</tr>";
+		}
+		echo "</table>";
+	} else
+	{
+		echo "No dog walkers were found that match that name. Please try again!";
+	}
+	$conn->close();
+}
+
+
+?>
