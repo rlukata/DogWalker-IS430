@@ -20,14 +20,16 @@
 
             <!-- Side content -->
             <div class="side">
-                <?php require 'elements/signinButton.html'; ?>
-                <?php require 'elements/loginButton.html'; ?>
+                <br>
+				<img src="images/Dog002.jpg" alt="HTML5 Icon" style="width:375px;height:285px;">
+				<br>
             </div>
 
             <!-- Main content -->
             <div class="main">
-                    <p>Coming soon...</p>
-                    <p>This side will contain a form for finding dog walkers by name</b></p>
+				<?php 
+                    require 'elements/searchWalkerByName.html';                    
+                ?>
             </div>
         </div>
 
