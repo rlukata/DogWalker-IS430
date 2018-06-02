@@ -9,10 +9,7 @@
 
             <label for="LastName"><b>Last Name</b></label>
             <input class="signin" type="text" placeholder="Enter a Walker's Last Name" name="LName" maxlength="20" required>
-			<!--
-            <label for="ZipCode"><b>Zip Code</b></label>
-            <input class="signin" type="text" placeholder="Enter a 5 digits Zip Code" name="ZipCode" pattern="(\d{5})" title="Enter a valid zip code: 90405" maxlength="5" required>
-			-->
+			
 
             <div class="clearfix">
                 <button type="submit" class="signupbtn">Search</button>
@@ -68,7 +65,9 @@ function RetrieveAndDisplayWalkers($firstName, $lastName)
 					echo "<td>" . $row['FName'] . "</td>";
 					echo "<td>" . $row['LName'] . "</td>";
 					echo "<td>" . $row['Email'] . "</td>";
+					echo "<td>" ."<a href='HireWalker.php?FName=$firstName&LName=$lastName'>Hire me!</a>" ."</td>";
 				echo "</tr>";
+				
 		}
 		echo "</table>";
 	} else
