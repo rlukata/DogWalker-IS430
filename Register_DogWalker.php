@@ -24,24 +24,32 @@
                 <?php
                 // TODO: Sanitize FName and LName
                 // TODO: Need to use isset to verify all fields are set as follows:
-                /* The following is an example of using isset
+
                 if ($_SERVER["REQUEST_METHOD"] == "POST")
-                { 
-                  if (isset($_POST['FName']))
-                  {
-                    $firstName = $_POST["FName"];
-                  }
-                */
+                {
+                        if(isset($_POST["FName"])){
+                                $firstName = $_POST["FName"];
+                        }
+                        if(isset($_POST["LName"])){
+                                $lastName = $_POST["LName"];
+                        }
+                        if(isset($_POST["ZipCode"])){
+                                $zipCode = $_POST["ZipCode"];
+                        }       
+                        if(isset($_POST["email"])){
+                                $userEmail = $_POST["email"];
+                        }
+                        if(isset($_POST["PhoneNumber"])){
+                                $phoneNumber = $_POST["PhoneNumber"];
+                        }       
+                        if(isset($_POST["psw"])){
+                                $userPassword = $_POST["psw"];
+                        }
+                        if(isset($_POST["psw-repeat"])){
+                                $user2Password = $_POST["psw-repeat"];
+                        }
 
-                $firstName = $_POST["FName"];
-                $lastName = $_POST["LName"];
-                $zipCode = $_POST["ZipCode"];
-                $userEmail = $_POST["email"];
-                $phoneNumber = $_POST["PhoneNumber"];
-                $userPassword = $_POST["psw"];
-                $user2Password = $_POST["psw-repeat"];
-
-                isset($firstName, $lastName, $zipCode, $userEmail, $phoneNumber, $userPassword, $user2Password);
+                }
 
                 /* Good for troubleshooting ****************
                 echo "First Name: $firstName<br>";
