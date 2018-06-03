@@ -28,14 +28,28 @@
 <?php
 // TODO: We should use htmlspecialchars($_SERVER["PHP_SELF"]) so the user gets the error messages on the same page!!!
 // TODO: Need to use isset to verify all fields *****
-$firstName = $_POST["FName"];
-$lastName = $_POST["LName"];
-$zipCode = $_POST["ZipCode"];
-$userEmail = $_POST["email"];
-$phoneNumber = $_POST["PhoneNumber"];
-$userPassword = $_POST["psw"];
-$user2Password = $_POST["psw-repeat"];
-isset($firstName, $lastName, $zipCode, $userEmail, $phoneNumber, $userPassword, $user2Password);
+if(isset($_POST["FName"])){
+	$firstName = $_POST["FName"];
+}
+if(isset($_POST["LName"])){
+	$lastName = $_POST["LName"];
+}
+if(isset($_POST["ZipCode"])){
+	$zipCode = $_POST["ZipCode"];
+}
+if(isset($_POST["email"])){
+	$userEmail = $_POST["email"];
+}
+if(isset($_POST["PhoneNumber"])){
+	$phoneNumber = $_POST["PhoneNumber"];
+}
+if(isset($_POST["psw"])){
+	$userPassword = $_POST["psw"];
+}
+if(isset($_POST["psw-repeat"])){
+	$user2Password = $_POST["psw-repeat"];
+}
+
 
 echo "First Name: $firstName<br>";
 echo "Last Name: $lastName<br>";
