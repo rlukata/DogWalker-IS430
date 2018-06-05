@@ -19,6 +19,7 @@
             <!-- Main content -->
             <div class="main">
                 <?php
+<<<<<<< HEAD
                     if ($_SERVER["REQUEST_METHOD"] == "POST")
                     {
                         if(isset($_POST["FName"])){
@@ -55,6 +56,29 @@
                         }
                     }
 				
+=======
+                // TODO: Sanitize FName and LName
+                // TODO: Need to use isset to verify all fields are set as follows:
+                /* The following is an example of using isset
+                if ($_SERVER["REQUEST_METHOD"] == "POST")
+                { 
+                  if (isset($_POST['FName']))
+                  {
+                    $firstName = $_POST["FName"];
+                  }
+                */
+
+                $firstName = $_POST["FName"];
+                $lastName = $_POST["LName"];
+                $zipCode = $_POST["ZipCode"];
+                $userEmail = $_POST["email"];
+                $phoneNumber = $_POST["PhoneNumber"];
+                $userPassword = $_POST["psw"];
+                $user2Password = $_POST["psw-repeat"];
+
+                isset($firstName, $lastName, $zipCode, $userEmail, $phoneNumber, $userPassword, $user2Password);
+
+>>>>>>> origin/master
                 /* Good for troubleshooting ****************
                 echo "First Name: $firstName<br>";
                 echo "Last Name: $lastName<br>";
