@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Login</button>
-<div id="id02" class="modal">
-    <span onclick="document.getElementById('id02').style.display='none'" class="closeLogin" title="Close Modal">&times;</span>
-    <form class="modal-content animate" action="login.php" method="POST">
+<button onclick="document.getElementById('id04').style.display='block'" style="width:auto;">Login for dog walkers</button>
+<div id="id04" class="modal">
+    <span onclick="document.getElementById('id04').style.display='none'" class="closeLogin" title="Close Modal">&times;</span>
+    <form class="modal-content animate" action="loginWalker.php" method="POST">
         <div class="imgcontainer">
             <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
         </div>
         <div class="container">
-            <label for="uname"><b>Username</b></label>
-            <input class="login" type="text" placeholder="Enter Username" name="email" required>
+            <label for="uname"><b>E-Mail</b></label>
+            <input class="login" type="text" placeholder="Enter a valid e-mail address" name="email" pattern="\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b" title="Enter a valid e-mail address: e.g. JohnDoe@foo.com" required>
 
             <label for="psw"><b>Password</b></label>
             <input class="login" type="password" placeholder="Enter Password" name="psw" required>
@@ -25,8 +25,7 @@
 
 <script>
 // Get the modal
-var modal = document.getElementById('id02');
-
+var modal = document.getElementById('id04');
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {

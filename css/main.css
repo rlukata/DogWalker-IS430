@@ -111,11 +111,11 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 /* Set a style for all buttons */
-button {
+button, input.button {
     background-color: #1abc9c;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 8px 0px 8px 0px;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -252,3 +252,13 @@ hr {
        width: 100%;
     }
 }
+
+table, th, td {
+		border: 1px solid black;
+		border-collapse: collapse; }
+	
+	th, td {
+		padding: 5px; }
+	
+	th {
+    text-align: left; }
