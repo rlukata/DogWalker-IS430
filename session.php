@@ -8,7 +8,11 @@
         $db = new mysqli("localhost", "root", "", "customers");
 
         // SQL query to fetch information of registerd users and finds user match.
-        $stmt = $db->prepare("SELECT email FROM users WHERE email=?");
+        try {
+            $stmt = $db->prepare("SELECT email FROM dog_owners WHERE email=?");            
+        } catch (Exception $e) {
+            $stmt = $db->prepare("SELECT email FROM dog_walkers WHERE email=?");
+        }                
         $stmt->bind_param('s', $user_check); 
         $stmt->execute();
         $stmt->store_result();    
@@ -16,8 +20,4 @@
         $login_session = $user_check;
         $stmt->close(); // Closing Connection
     }
-    //else {
-        //$stmt->close(); // Closing Connection
-        //header('Location: index.php'); // Redirecting To Home Page
-    //}
 ?>

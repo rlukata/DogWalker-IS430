@@ -22,7 +22,8 @@
             
             if ($stmt->num_rows == 0) {
                 $error = "Username or Password is invalid";
-                
+				echo $error;
+				echo '<br><h2><a href=index.php>Go back to main menu</h2>';
             } else {
                 $_SESSION['login_user']=$email; // Initializing Session
                 header ("location:gmapsFinder.php");
