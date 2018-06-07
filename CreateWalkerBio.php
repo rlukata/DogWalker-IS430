@@ -139,7 +139,7 @@ function createWalkerHMTLFile($firstName, $lastName, $picture, $bio)
 	fwrite($myfile, $text);
 	
 	// Write Bio
-	$text = "<p>$bio</p><br><br><a href='index.php'>Go Back to Main Menu</a>";
+	$text = "<p>$bio</p><br><br><a href='../../index.php'>Go Back to Main Menu</a>";
 	fwrite($myfile, $text);
 	
 	
