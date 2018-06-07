@@ -89,9 +89,10 @@
                         $wordsNotAllowed = array("/delete/i", "/update/i","/union/i","/insert/i","/drop/i","/evil/i","/--/i");
                         // Remove dangerous words from first name
                         $input = preg_replace($wordsNotAllowed , "", $input);
-                        $input = escapeshellarg($input);
+						// Unfortunately escapeshellarg adds quotes around the first and last names.
+						// $input = escapeshellarg($input);
                         // strip tags
-                        $input = strip_tags($input);
+                        $input = filter_var($input, FILTER_SANITIZE_STRING,FILTER_FLAG_ENCODE_AMP);
                         // strip slashes
                         $input = stripslashes($input);
                         return $input;
@@ -101,7 +102,7 @@
                     function CreateMySQLUser($firstName, $lastName, $zipCode, $userEmail, $phoneNumber, $userPassword)
                     {
                         // Useful for troubleshooting
-                        // echo "<b>Creating User: <i>$firstName $lastName</i></b><br>";
+                        echo "<b>Creating Walker: <i>$firstName $lastName</i></b><br>";
                         // Create connection
                         $conn = new mysqli('localhost', 'root', '', 'customers');
                         // Check connection
@@ -121,6 +122,8 @@
                         {
                             echo "<h1>Welcome Dog Walker: $firstName $lastName!!!</h1><br>";
                             echo "<b>We are looking forward to a long and fruitful relationship!</b><br>";
+							echo "<b>It is recommended that you create your walker bio rigth now.</b><br>";
+							echo "<a href='CreateWalkerBio.php'>Create your Walker Bio</a>";
                         }
                         else
                         {

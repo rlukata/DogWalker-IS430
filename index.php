@@ -9,6 +9,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style><?php include 'css/main.css';?></style>
+		<script type="text/javascript" src="ajax-testimonials.js"></script>
     </head>
 
     <!-- Body -->
@@ -40,13 +41,8 @@
 
             <!-- Main content -->
             <div class="main">
-                <p>My dog walker understands that my dogs are my world. She was in constant contact sending me updates 
-                throughout the day. She took care of my dogs as if they were her own!</p>
-                <p><i>M. Silverstone. Seattle, WA</i></p></br>
-                <p>John S. is an amazing dogwalker. He takes my labradoodle (Diesel) for runs and my dog loves it!</p>
-                <p><i>P. Gomez. Portland, OR</i></p></br>
-                <p>My dog Luna loved Maria. She is the best dog walker ever!</p>
-                <p><i>Lisa M. Santa Monica, CA</i></p>
+                <h2><center>Customers Reviews</center></h2>
+				<center><div id="ajax-testimonials"></div></center>
             </div>
         </div>
 
