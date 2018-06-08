@@ -19,7 +19,7 @@
             <!-- Side content -->
             <div class="side">
                 <?php 
-                    if(isset($_SESSION['login_user'])){
+                    if(isset($_SESSION['login_walker']) || isset($_SESSION['login_owner'])){
                         echo '<form><input class="button" type="button" value="Logout" onclick="window.location.href=\'logout.php\'" /></form>';
                     }
                 ?>
@@ -29,8 +29,8 @@
             <!-- Main content -->
             <div class="main">
                 <?php 
-                    if(!isset($_SESSION['login_user'])){
-                        echo '<form><input class="button" type="button" value="Please login to access this section." onclick="window.location.href=\'index.php\'" /></form>';
+                    if(!isset($_SESSION['login_owner'])){
+                        echo '<form><input class="button" type="button" value="Please login as a dog owner to access this section." onclick="window.location.href=\'index.php\'" /></form>';
                     }
                     else {
                         require 'elements/searchWalkerByName.html';

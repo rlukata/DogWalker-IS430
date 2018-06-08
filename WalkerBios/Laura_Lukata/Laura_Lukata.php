@@ -1,0 +1,3 @@
+<html>
+<head><title>3Musqueteers</title><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1'><style>
+            <?php include '../../css/main.css';?></style></head><body><?php require '../../elements/header.html' ?><b>My Name is: Laura Lukata</b><br><br><img src='WalkingDogs_001.jpg' alt='Walker Picture' style='width:350px;height:265px;'><p>Talk about your experience with dogs... </p><br><br><a href='../../index.php'>Go Back to Main Menu</a><?php require '../../elements/footer.html'; ?></body></html>

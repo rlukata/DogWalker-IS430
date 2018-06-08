@@ -117,7 +117,7 @@
                         // Useful for troubleshooting
                         // echo "<b>Connection to MySQL DB established!</b> <br>";
                         $stmt = $conn->prepare("INSERT INTO dog_owners (FName, LName, ZipCode, Email, PhoneNumber, Password) VALUES (?, ?, ?, ?, ?, MD5(?))");
-                        $stmt->bind_param('ssisis', $firstName, $lastName, $zipCode, $userEmail, $phoneNumber, $userPassword);
+                        $stmt->bind_param('ssisss', $firstName, $lastName, $zipCode, $userEmail, $phoneNumber, $userPassword);
                         $stmt->execute();
                         $stmt->store_result();
                         // Useful for troubleshooting

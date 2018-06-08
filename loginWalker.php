@@ -22,11 +22,12 @@
             
             if ($stmt->num_rows == 0) {
                 $error = "Username or Password is invalid";
-				echo $error;
-				echo '<br><h2><a href=index.php>Go back to main menu</h2>';                
+                echo $error;
+                echo '<br><h2><a href=index.php>Go back to main menu</h2>';                
             } else {
-                $_SESSION['login_user']=$email; // Initializing Session
-                header ("location:gmapsFinder.php");
+                $_SESSION['login_walker']=$email; // Initializing Session
+                //echo  $_SESSION['login_walker'];
+                header ("location:index.php");
             }
             mysqli_close($db); // Closing Connection
         }

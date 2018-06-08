@@ -27,7 +27,7 @@
             <!-- Side content -->
             <div class="side">
                 <?php
-                    if(isset($_SESSION['login_user'])){
+                    if(isset($_SESSION['login_walker']) || isset($_SESSION['login_owner'])){
                         echo '<form><input class="button" type="button" value="Logout" onclick="window.location.href=\'logout.php\'" /></form>';
                     }
                 ?>
@@ -38,8 +38,8 @@
             <!-- Main content -->
             <div class="main">
                 <?php 
-                    if(!isset($_SESSION['login_user'])){
-                         echo '<form><input class="button" type="button" value="Please login to access this section." onclick="window.location.href=\'index.php\'" /></form>';
+                    if(!isset($_SESSION['login_owner'])){
+                         echo '<form><input class="button" type="button" value="Please login as a dog owner to access this section." onclick="window.location.href=\'index.php\'" /></form>';
                     }
                     else {
                         RetrieveUserNameFromDB($login_session);
@@ -70,21 +70,17 @@
                 } 
                 // Useful for troubleshooting
                 // echo "<b>Connection to MySQL DB established!</b> <br>";
-                $sql = "SELECT FName,LName FROM Dog_Owners WHERE email='$userEmail'";
-                // Useful for troubleshooting
-                // echo "SQL Statemet: $sql <br>";
-
+                if (isset($_SESSION['login_owner'])) {
+                    $sql = "SELECT FName,LName FROM dog_owners WHERE email='$userEmail'";
                     $result = $conn->query($sql);
-                    if ($result->num_rows > 0)
-                    {
+                    if ($result->num_rows > 0) {
                         $row = $result->fetch_assoc();
                         echo "<h2>Welcome: " .$row['FName'] ." " .$row['LName'] ."</h2><br>";
-                    }
-                    else
-                    {
+                    } else {
                         die("Connection failed: " . $conn->connect_error);
                     }
-                $conn->close();	
+                    $conn->close();	
+                }                
             }
         ?>
     </body>

@@ -26,14 +26,14 @@
             <!-- Side content -->
             <div class="side">
                 <?php 
-                    if(!isset($_SESSION['login_user'])){
+                    if(isset($_SESSION['login_walker']) || isset($_SESSION['login_owner'])){
+                        echo '<form><input class="button" type="button" value="Logout" onclick="window.location.href=\'logout.php\'" /></form>';
+                    }
+                    else {
                         require 'elements/signupButton.html';                    
                         require 'elements/signupWalker.html';
                         require 'elements/loginButtonOwner.html';
                         require 'elements/loginButtonWalker.html';
-                    }
-                    else {
-                        echo '<form><input class="button" type="button" value="Logout" onclick="window.location.href=\'logout.php\'" /></form>';
                     }
                 ?>
                 <br><br>
@@ -42,8 +42,8 @@
 
             <!-- Main content -->
             <div class="main">
-                <h2><center>Customers Reviews</center></h2>
-				<center><div id="ajax-testimonials"></div></center>
+                <h2 style="text-align:center">Customers Reviews</h2>
+                <center><div id="ajax-testimonials"></div></center>
             </div>
         </div>
 
